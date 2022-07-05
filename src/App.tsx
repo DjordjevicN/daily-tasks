@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.scss";
+import InputField from "./compornents/inputField/ImputField";
 
-function App() {
+const App: React.FC = () => {
+  const [task, setTask] = useState<string>("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="heading">
+        <h2>Daily tasks</h2>
+      </div>
+      <InputField task={task} setTask={setTask} />
     </div>
   );
-}
+};
 
 export default App;
